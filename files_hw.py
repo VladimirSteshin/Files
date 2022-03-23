@@ -21,4 +21,14 @@ with open(file_path, encoding='UTF-8') as file:
                 dish_dict['measure'] = unpacked_dish[2].strip()
                 dish_list.append(dish_dict)
             file.readline()
-            
+
+
+def dish_count(dishes, persons):
+    shopping_list = {}
+    for dish in cook_book.keys():
+        if dish in dishes:
+            for ingredient in cook_book[dish]:
+                print(ingredient)
+
+
+dish_count(["Омлет", "Фахитос"], 2)
