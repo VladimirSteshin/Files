@@ -1,8 +1,8 @@
 import os
 
-file_path = os.path.join(os.getcwd(), 'recipes.txt')
+file_path_dish = os.path.join(os.getcwd(), 'recipes.txt')
 
-with open(file_path, encoding='UTF-8') as file:
+with open(file_path_dish, encoding='UTF-8') as file:
     cook_book = {}
     while True:
         dish_name = file.readline().strip()
@@ -34,6 +34,7 @@ def dish_count(dishes, persons):
                     shopping_list[name] = {'measure': measure, 'quantity': number * persons}
                 else:
                     shopping_list[name]['quantity'] += number * persons
+    return shopping_list
 
 
-dish_count(["Омлет", "Фахитос", "Утка по-пекински", "Запеченный картофель"], 3)
+print(dish_count(["Омлет", "Фахитос", "Утка по-пекински", "Запеченный картофель"], 3))
