@@ -27,14 +27,15 @@ def dish_count(dishes, persons):
     shopping_list = {}
     for dish in cook_book.keys():
         if dish in dishes:
-            for ingredient in cook_book[dish]:
-                name = ingredient['ingredient_name']
-                measure = ingredient['measure']
-                number = int(ingredient['quantity'])
+            for purchase in cook_book[dish]:
+                name = purchase['ingredient_name']
+                measure = purchase['measure']
+                number = int(purchase['quantity'])
                 if name not in shopping_list:
                     shopping_list[name] = {'measure': measure, 'quantity': number * persons}
                 else:
                     shopping_list[name]['quantity'] += number * persons
+    pprint(shopping_list)
 
 
-dish_count(["Омлет", "Фахитос"], 2)
+dish_count(["Омлет", "Фахитос", "Утка по-пекински", "Запеченный картофель"], 3)
