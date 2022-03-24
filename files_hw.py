@@ -1,5 +1,4 @@
 import os
-from pprint import pprint
 
 file_path = os.path.join(os.getcwd(), 'recipes.txt')
 
@@ -35,7 +34,6 @@ def dish_count(dishes, persons):
                     shopping_list[name] = {'measure': measure, 'quantity': number * persons}
                 else:
                     shopping_list[name]['quantity'] += number * persons
-    pprint(shopping_list)
 
 
 dish_count(["Омлет", "Фахитос", "Утка по-пекински", "Запеченный картофель"], 3)
